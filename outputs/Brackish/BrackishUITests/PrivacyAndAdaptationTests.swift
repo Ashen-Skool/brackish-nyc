@@ -35,4 +35,20 @@ final class PrivacyAndAdaptationTests:XCTestCase {
         let a=XCTAttachment(screenshot:XCUIScreen.main.screenshot());a.name="largest-dynamic-type";a.lifetime = .keepAlways;add(a)
         button.tap();XCTAssertTrue(app.buttons["Cancel"].waitForExistence(timeout:5))
     }
+    func testShowOnboardingAgainFromSettings() {
+        let app=launch()
+        app.buttons["Settings and privacy"].tap()
+        let replay=app.buttons["show-onboarding-again"]
+        XCTAssertTrue(replay.waitForExistence(timeout:5))
+        replay.tap()
+
+        let next=app.buttons["onboarding-next"]
+        XCTAssertTrue(next.waitForExistence(timeout:8))
+        XCTAssertTrue(app.staticTexts["A different\nkind of city."].exists)
+        for _ in 0..<3 {
+            XCTAssertTrue(next.waitForExistence(timeout:8))
+            next.tap()
+        }
+        XCTAssertTrue(app.buttons["tab-atlas"].waitForExistence(timeout:8))
+    }
 }

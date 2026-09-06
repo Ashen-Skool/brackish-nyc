@@ -74,6 +74,9 @@ final class JournalVault {
         catch { self.error = "Could not save. Your previous journal is intact. \(error.localizedDescription)"; return false }
     }
     func completeOnboarding() { _ = transact { $0.onboarded = true } }
+    @discardableResult func showOnboardingAgain() -> Bool {
+        transact { $0.onboarded = false }
+    }
     func toggleSaved(_ id: String) {
         _ = transact { if $0.savedSpotIDs.contains(id) { $0.savedSpotIDs.remove(id) } else { $0.savedSpotIDs.insert(id) } }
     }

@@ -15,6 +15,18 @@ struct SettingsView:View {
                 Text("Your water.\nYour record.").font(.system(.largeTitle,design:.serif)).foregroundStyle(Ink.deep)
                 Text("Brackish is a private NYC fishing field journal. No account, subscription, API key or custom server.")
             }
+            Section {
+                Button {
+                    if store.showOnboardingAgain() { dismiss() }
+                } label: {
+                    Label("Show onboarding again",systemImage:"arrow.counterclockwise")
+                }
+                .accessibilityIdentifier("show-onboarding-again")
+            } header: {
+                Text("Onboarding")
+            } footer: {
+                Text("Replays Brackish’s three-page introduction. Your journal, photos, saved spots and trip checklists stay exactly as they are.")
+            }
             Section("Export your journal") {
                 Toggle("Include area and written notes",isOn:$includePrivate)
                 Text("By default, exported catch areas and notes are omitted. Photos, dates, measurements, saved spots and checklists are included. Photos may visibly reveal a place; review before sharing. The JSON file contains JPEG photos encoded as base64.").font(.caption).foregroundStyle(Ink.quiet)

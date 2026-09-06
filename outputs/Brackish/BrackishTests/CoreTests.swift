@@ -81,4 +81,26 @@ final class CoreTests:XCTestCase {
         try FileManager.default.removeItem(at:root);try Data().write(to:root)
         XCTAssertFalse(store.transact{$0.savedSpotIDs.insert("gantry")});XCTAssertTrue(store.state.savedSpotIDs.isEmpty)
     }
+    @MainActor func testShowingOnboardingAgainPreservesUserData() throws {
+        let store=JournalStore(root:root)
+        let entry=CatchEntry(speciesID:"yellow-perch",area:"Queens",notes:"Keep this note")
+        XCTAssertTrue(store.transact {
+            $0.onboarded=true
+            $0.catches=[entry]
+            $0.savedSpotIDs=["gantry"]
+            $0.trips=[TripPlan(spotID:"gantry",items:[ChecklistItem(title:"Pliers",checked:true)])]
+        })
+
+        XCTAssertTrue(store.showOnboardingAgain())
+        XCTAssertFalse(store.state.onboarded)
+        XCTAssertEqual(store.state.catches,[entry])
+        XCTAssertEqual(store.state.savedSpotIDs,["gantry"])
+        XCTAssertEqual(store.state.trips.first?.items.first?.checked,true)
+
+        let reloaded=JournalStore(root:root)
+        XCTAssertFalse(reloaded.state.onboarded)
+        XCTAssertEqual(reloaded.state.catches,[entry])
+        XCTAssertEqual(reloaded.state.savedSpotIDs,["gantry"])
+        XCTAssertEqual(reloaded.state.trips.first?.items.first?.checked,true)
+    }
 }
