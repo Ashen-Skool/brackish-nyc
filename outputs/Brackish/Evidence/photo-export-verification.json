@@ -1,0 +1,10 @@
+{
+  "format": "Brackish journal v1",
+  "catchCount": 1,
+  "photoCount": 1,
+  "redactedNotes": true,
+  "redactedCatchArea": true,
+  "jpegBytes": 79849,
+  "jpegSHA256": "f77eae582f9d2bd6bf7e42217d278c3aa14d27eec084eb945134c537af6c9703",
+  "savedThrough": "Native iOS Files destination picker on dedicated simulator"
+}

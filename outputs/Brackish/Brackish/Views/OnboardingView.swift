@@ -5,6 +5,9 @@ struct OnboardingView: View {
     @Environment(\.accessibilityReduceMotion) var reduceMotion
     @State private var page = 0
     @State private var appeared = false
+    @State private var transitioning = false
+    @State private var veil = 0.0
+    @State private var transitionTask: Task<Void,Never>?
     var body: some View {
         GeometryReader { proxy in
             ZStack {
@@ -42,19 +45,38 @@ struct OnboardingView: View {
                     }.scrollIndicators(.visible)
                     if page == 0 { Spacer(minLength: proxy.size.height*0.15) }
                     VStack(spacing: 12) {
-                        Button {
-                            tactile(); withAnimation(reduceMotion ? nil : .easeInOut(duration: 0.42)) {
-                                if page < 2 { page += 1 } else { store.completeOnboarding() }
-                            }
-                        } label: { HStack { Text(page == 0 ? "Find your water" : page == 1 ? "A few things to know" : "Open the atlas"); Spacer(); Image(systemName: "arrow.right") } }
-                            .buttonStyle(PrimaryButton(light: page == 0)).accessibilityIdentifier("onboarding-next")
-                        if page > 0 { Button("Back") { withAnimation(reduceMotion ? nil : .easeInOut(duration: 0.25)) { page -= 1 } }.frame(minHeight: 44) }
+                        Button { move(1) } label: { HStack { Text(page == 0 ? "Find your water" : page == 1 ? "A few things to know" : "Open the atlas"); Spacer(); Image(systemName: "arrow.right") } }
+                            .buttonStyle(PrimaryButton(light: page == 0)).accessibilityIdentifier("onboarding-next").disabled(transitioning)
+                        if page > 0 { Button("Back") { move(-1) }.frame(minHeight: 44).disabled(transitioning) }
                         else { Text("A field guide to the city’s other side.").font(.caption).foregroundStyle(Ink.paper.opacity(0.8)).padding(.bottom, 6) }
                     }
                 }.padding(.horizontal, 28).padding(.bottom, 22).frame(maxWidth: 660).frame(maxWidth: .infinity)
                     .foregroundStyle(page == 0 ? Ink.paper : Ink.deep)
                     .opacity(appeared ? 1 : 0).offset(y: appeared || reduceMotion ? 0 : 10)
-            }.onAppear { withAnimation(reduceMotion ? nil : .easeOut(duration: 0.8)) { appeared = true } }
+            }.overlay { Ink.deep.opacity(veil).ignoresSafeArea().allowsHitTesting(transitioning).accessibilityHidden(true) }
+                .onAppear { withAnimation(reduceMotion ? nil : .easeOut(duration: 0.8)) { appeared = true } }
+                .onDisappear { transitionTask?.cancel(); transitioning=false; veil=0 }
+        }
+    }
+    @MainActor private func move(_ direction:Int) {
+        guard !transitioning else {return}
+        tactile()
+        if reduceMotion {
+            if direction > 0 && page == 2 {store.completeOnboarding()} else {page=max(0,page+direction)}
+            return
+        }
+        transitioning=true
+        withAnimation(.easeOut(duration:0.14)) {veil=1}
+        transitionTask=Task { @MainActor in
+            try? await Task.sleep(for:.milliseconds(160))
+            guard !Task.isCancelled else {return}
+            if direction > 0 && page == 2 {store.completeOnboarding();return}
+            var transaction=Transaction(animation:nil);transaction.disablesAnimations=true
+            withTransaction(transaction) {page=max(0,page+direction)}
+            withAnimation(.easeIn(duration:0.22)) {veil=0}
+            try? await Task.sleep(for:.milliseconds(230))
+            guard !Task.isCancelled else {return}
+            transitioning=false
         }
     }
     private func privacyRow(_ icon: String,_ title: String,_ detail: String) -> some View {

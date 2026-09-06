@@ -31,5 +31,12 @@ final class PhotoJourneyTests:XCTestCase {
         XCTAssertTrue(app.buttons["tab-journal"].waitForExistence(timeout:8));app.buttons["tab-journal"].tap()
         XCTAssertTrue(app.staticTexts["Yellow perch"].waitForExistence(timeout:8))
         let final=XCTAttachment(screenshot:XCUIScreen.main.screenshot());final.name="photo-journal-entry";final.lifetime = .keepAlways;add(final)
+        app.buttons["Settings and privacy"].tap();app.buttons["export-journal"].tap()
+        let filename=app.textFields["DOCPicker.filenameTextField"]
+        XCTAssertTrue(filename.waitForExistence(timeout:25));filename.tap()
+        filename.typeText(String(repeating:XCUIKeyboardKey.delete.rawValue,count:(filename.value as? String ?? "").count))
+        filename.typeText("Brackish-Photo-export-\(UUID().uuidString.prefix(8))")
+        let exportSave=app.buttons["Save"].firstMatch;XCTAssertTrue(exportSave.waitForExistence(timeout:25));exportSave.tap()
+        XCTAssertTrue(app.staticTexts["export-result"].waitForExistence(timeout:12))
     }
 }

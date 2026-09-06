@@ -1,0 +1,5 @@
+# Optional asset/evaluation preparation only; not needed to build or run the app.
+coremltools==9.0
+transformers==5.16.1
+numpy==2.4.6
+pillow==12.3.0
