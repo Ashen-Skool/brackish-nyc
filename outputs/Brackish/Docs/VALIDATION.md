@@ -39,7 +39,9 @@ straight-line distance ordering. These are not extra copies of the core tests.
 A separate walkthrough case drives real controls and records app motion.
 
 Evidence/tests-final-summary.json, tests-core-and-denied-location.json and
-tests-granted-location.json contain XCTest's exported results. The core/location
+tests-granted-location.json contain XCTest's exported results. The extended photo
+journey also exports its saved JPEG; tests-photo-export-summary.json and
+photo-export-verification.json preserve that passing check. The core/location
 bundle overlaps the final suite: do not add their totals as if all were unique.
 
 The native contrast audit has one specifically reviewed false-positive exception
@@ -63,7 +65,7 @@ See Evidence/accessibility-review.md and the independent theme-color test.
 | Location | Denied and granted tests pass; non-NYC location copy and timeouts wired in source. Catch records have no coordinates. |
 | Saved spots/checklists | Save and packed state survive relaunch; custom item added; date, uncheck-all and deletion have concrete persistence actions. |
 | Species/reference/tackle | All twelve species have field marks, purpose-based tackle notes and sources. Shop action is a real Apple Maps search, not inventory. |
-| Export | Native Files save completed and resulting JSON located/decoded. Core tests verify default redaction. Copies exported outside the app are not erased by delete-all. |
+| Export | Native Files save completed with a real saved photograph; JSON and JPEG payload located/decoded. Notes/area redaction verified. Copies exported outside the app are not erased by delete-all. |
 | Delete-all | UI confirmation, empty state after relaunch, and photo/draft removal in core tests. |
 | External resources | 20 of 21 audited URLs return HTTP 200. NY Health blocks automated requests with 403; it is a referenced official endpoint, not a fabricated replacement. |
 | Offline | Persistence, reference/search and inference are local by construction and exercised without app service calls. An airplane-mode integration run was not performed by changing the shared host network. Map tiles/directions/websites may need internet. |

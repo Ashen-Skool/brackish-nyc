@@ -29,8 +29,10 @@ See Design/PROMPTS.md for prompts, tool and provenance.
 ## Motion specification
 
 - First arrival: 0.8 second ease-out fade and 10 point settling motion.
-- Onboarding chapters: 0.42 second ease-in-out change, driven by the Next/Back
-  buttons. There is no timer advancing a page while someone is reading.
+- Onboarding chapters: a 0.14 second deep-ink veil, atomic content swap while
+  covered, then a 0.22 second reveal. Next/Back inputs are guarded during the
+  transition; cancellation resets the veil. This avoids overlapping old/new
+  text during crossfade. There is no timer advancing a page while someone reads.
 - Tab selection: 0.22 second ease-in-out highlight using matched geometry.
 - Map area changes: 0.5 second native camera animation; map panning remains direct.
 - Photo comparison: a native ProgressView appears while the actor runs. Cancellation

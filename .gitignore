@@ -6,3 +6,5 @@ work/
 **/.venv/
 **/__pycache__/
 *.xcresult
+# Stale generated-project backup; the delivered project is Brackish.xcodeproj.
+outputs/Brackish/Brackish 2.xcodeproj/
