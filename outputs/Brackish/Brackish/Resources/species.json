@@ -1,0 +1,170 @@
+[
+  {
+    "id": "striped-bass",
+    "name": "Striped bass",
+    "scientific": "Morone saxatilis",
+    "water": "Saltwater",
+    "marks": [
+      "Long, dark horizontal stripes",
+      "Two distinct dorsal fins",
+      "Silvery sides and a powerful forked tail"
+    ],
+    "habitat": "An estuary and coastal fish that moves between salt and fresh water. Occurrence is seasonal; a map pin is not a catch forecast.",
+    "tackle": "A medium saltwater spinning setup and a small swimming lure suit shore exploration. Non-offset circle hooks are required when fishing for striped bass with bait; check DEC details.",
+    "source": "https://www.fisheries.noaa.gov/species/atlantic-striped-bass"
+  },
+  {
+    "id": "bluefish",
+    "name": "Bluefish",
+    "scientific": "Pomatomus saltatrix",
+    "water": "Saltwater",
+    "marks": [
+      "Blue-green back, silver sides",
+      "Large mouth with sharp teeth",
+      "Deeply forked tail"
+    ],
+    "habitat": "A schooling coastal predator. Young bluefish are often called snappers.",
+    "tackle": "Use pliers and a bite-resistant leader. A casting spoon imitates small baitfish; match it to your rod rating. Keep fingers clear of the mouth.",
+    "source": "https://www.fisheries.noaa.gov/species/bluefish"
+  },
+  {
+    "id": "summer-flounder",
+    "name": "Summer flounder",
+    "scientific": "Paralichthys dentatus",
+    "water": "Saltwater",
+    "marks": [
+      "Both eyes usually on the left side",
+      "Flattened, mottled body",
+      "Several eye-like spots on the upper side"
+    ],
+    "habitat": "Also called fluke. Often found on sandy or muddy coastal bottoms. Winter flounder is a different species.",
+    "tackle": "A light bucktail or bait rig can work near the bottom. Use only enough weight to maintain contact and follow current size and season rules.",
+    "source": "https://www.fisheries.noaa.gov/species/summer-flounder"
+  },
+  {
+    "id": "scup",
+    "name": "Scup",
+    "scientific": "Stenotomus chrysops",
+    "water": "Saltwater",
+    "marks": [
+      "Deep, compressed silver body",
+      "Small mouth and relatively small head",
+      "Long spiny dorsal fin"
+    ],
+    "habitat": "Also called porgy. A coastal bottom-feeding species associated with structure.",
+    "tackle": "Small baited hooks and a simple bottom rig help present a small offering. A non-lead sinker reduces unnecessary lead use.",
+    "source": "https://www.fisheries.noaa.gov/species/scup"
+  },
+  {
+    "id": "black-sea-bass",
+    "name": "Black sea bass",
+    "scientific": "Centropristis striata",
+    "water": "Saltwater",
+    "marks": [
+      "Dark body with pale scale centers",
+      "Long continuous dorsal fin",
+      "Larger males can have a raised forehead"
+    ],
+    "habitat": "A coastal fish associated with reefs, wrecks and other structure. Color changes with age and sex.",
+    "tackle": "Use a small bait rig around structure with a leader suitable for abrasion. Check current seasons; they change during the year.",
+    "source": "https://www.fisheries.noaa.gov/species/black-sea-bass"
+  },
+  {
+    "id": "largemouth-bass",
+    "name": "Largemouth bass",
+    "scientific": "Micropterus salmoides",
+    "water": "Freshwater",
+    "marks": [
+      "Upper jaw extends behind the eye",
+      "Dark horizontal band along the side",
+      "Notch between spiny and soft dorsal fins"
+    ],
+    "habitat": "A warmwater predator found around vegetation, cover and lake edges.",
+    "tackle": "A weedless soft lure helps around aquatic plants. Use barbless hooks and non-lead weights in NYC park waters.",
+    "source": "https://content.govdelivery.com/accounts/NYSDEC/bulletins/3a1112e"
+  },
+  {
+    "id": "bluegill",
+    "name": "Bluegill",
+    "scientific": "Lepomis macrochirus",
+    "water": "Freshwater",
+    "marks": [
+      "Dark flap at the rear of the gill cover",
+      "Deep oval body",
+      "Dark patch near the rear of the dorsal fin"
+    ],
+    "habitat": "A small sunfish often found near vegetation and shoreline cover.",
+    "tackle": "A small barbless hook, a float and a short piece of worm provide a simple starting rig. Keep hooks small for the small mouth.",
+    "source": "https://www.dnr.state.mn.us/fish/sunfish/biology.html"
+  },
+  {
+    "id": "pumpkinseed",
+    "name": "Pumpkinseed",
+    "scientific": "Lepomis gibbosus",
+    "water": "Freshwater",
+    "marks": [
+      "Orange-red spot at the edge of the dark ear flap",
+      "Wavy blue-green lines on the cheek",
+      "Speckled, deep-bodied sides"
+    ],
+    "habitat": "A colorful sunfish in quiet, vegetated fresh water. Juveniles and hybrids can be hard to separate from other sunfish.",
+    "tackle": "Use a small barbless hook and float, as for bluegill. Check the cheek and ear flap before choosing a species.",
+    "source": "https://www.dnr.state.mn.us/fish/sunfish/biology.html"
+  },
+  {
+    "id": "black-crappie",
+    "name": "Black crappie",
+    "scientific": "Pomoxis nigromaculatus",
+    "water": "Freshwater",
+    "marks": [
+      "Irregular dark mottling over silver sides",
+      "Deep body and large mouth",
+      "Usually seven or eight dorsal spines"
+    ],
+    "habitat": "A freshwater fish often associated with submerged cover. White crappie can look similar.",
+    "tackle": "A tiny jig or small bait beneath a float is useful around cover. Cast gently and keep the hook barbless.",
+    "source": "https://dec.ny.gov/things-to-do/freshwater-fishing/learn-to-fish/tips-skills/fishing-for-crappie"
+  },
+  {
+    "id": "yellow-perch",
+    "name": "Yellow perch",
+    "scientific": "Perca flavescens",
+    "water": "Freshwater",
+    "marks": [
+      "Dark vertical bars on yellow-green sides",
+      "Two separate dorsal fins",
+      "Orange or yellow lower fins"
+    ],
+    "habitat": "A schooling freshwater fish. Young fish may show paler colors than adults.",
+    "tackle": "A small jig or a baited barbless hook beneath a float keeps the setup simple. Do not infer current abundance from historical survey records.",
+    "source": "https://seagrant.sunysb.edu/nysportfishing/fishid.htm"
+  },
+  {
+    "id": "common-carp",
+    "name": "Common carp",
+    "scientific": "Cyprinus carpio",
+    "water": "Freshwater",
+    "marks": [
+      "Two pairs of barbels near the mouth",
+      "Large scales and a long dorsal fin",
+      "Thick body with a downward-facing mouth"
+    ],
+    "habitat": "An introduced freshwater fish. It can grow large in city lakes; goldfish generally lack its mouth barbels.",
+    "tackle": "A sturdy spinning rod and a simple bottom presentation are practical. Use a soft landing net and keep a large fish supported.",
+    "source": "https://dec.ny.gov/things-to-do/freshwater-fishing/places-to-fish/statewide-opportunities/carp"
+  },
+  {
+    "id": "brown-bullhead",
+    "name": "Brown bullhead",
+    "scientific": "Ameiurus nebulosus",
+    "water": "Freshwater",
+    "marks": [
+      "Whisker-like barbels around the mouth",
+      "Mottled brown body without scales",
+      "Tail squared or slightly rounded"
+    ],
+    "habitat": "A freshwater catfish found in several NYC park lakes. Other catfish can be difficult to separate from a single photograph.",
+    "tackle": "A small bottom rig and pliers are helpful. Avoid the sharp fin spines; identify the fish in the water when possible.",
+    "source": "https://dec.ny.gov/places/van-cortlandt-lake"
+  }
+]

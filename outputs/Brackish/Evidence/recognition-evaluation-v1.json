@@ -1,0 +1,502 @@
+[
+  {
+    "candidates" : [
+
+    ],
+    "expected" : "striped-bass",
+    "file" : "striped-bass-146182816.jpg",
+    "seconds" : 0.922387957572937,
+    "similarities" : [
+
+    ],
+    "suitable" : false,
+    "taxon" : "Morone saxatilis"
+  },
+  {
+    "candidates" : [
+
+    ],
+    "expected" : "striped-bass",
+    "file" : "striped-bass-155546354.jpg",
+    "seconds" : 0.07620108127593994,
+    "similarities" : [
+
+    ],
+    "suitable" : false,
+    "taxon" : "Morone saxatilis"
+  },
+  {
+    "candidates" : [
+      "black-crappie",
+      "common-carp",
+      "largemouth-bass"
+    ],
+    "expected" : "bluefish",
+    "file" : "bluefish-150174742.jpg",
+    "seconds" : 0.07244002819061279,
+    "similarities" : [
+      0.3269968,
+      0.3226989,
+      0.31534213
+    ],
+    "suitable" : true,
+    "taxon" : "Pomatomus saltatrix"
+  },
+  {
+    "candidates" : [
+      "black-crappie",
+      "striped-bass",
+      "largemouth-bass"
+    ],
+    "expected" : "bluefish",
+    "file" : "bluefish-150174748.jpg",
+    "seconds" : 0.07760894298553467,
+    "similarities" : [
+      0.32804224,
+      0.32192788,
+      0.31786132
+    ],
+    "suitable" : true,
+    "taxon" : "Pomatomus saltatrix"
+  },
+  {
+    "candidates" : [
+      "common-carp",
+      "black-crappie",
+      "summer-flounder"
+    ],
+    "expected" : "summer-flounder",
+    "file" : "summer-flounder-158940577.jpg",
+    "seconds" : 0.07624590396881104,
+    "similarities" : [
+      0.28878546,
+      0.27681944,
+      0.26794016
+    ],
+    "suitable" : true,
+    "taxon" : "Paralichthys dentatus"
+  },
+  {
+    "candidates" : [
+
+    ],
+    "expected" : "summer-flounder",
+    "file" : "summer-flounder-167751888.jpg",
+    "seconds" : 0.07471799850463867,
+    "similarities" : [
+
+    ],
+    "suitable" : false,
+    "taxon" : "Paralichthys dentatus"
+  },
+  {
+    "candidates" : [
+
+    ],
+    "expected" : "scup",
+    "file" : "scup-164291077.jpg",
+    "seconds" : 0.07345199584960938,
+    "similarities" : [
+
+    ],
+    "suitable" : false,
+    "taxon" : "Stenotomus chrysops"
+  },
+  {
+    "candidates" : [
+
+    ],
+    "expected" : "scup",
+    "file" : "scup-165983658.jpg",
+    "seconds" : 0.07689893245697021,
+    "similarities" : [
+
+    ],
+    "suitable" : false,
+    "taxon" : "Stenotomus chrysops"
+  },
+  {
+    "candidates" : [
+      "pumpkinseed",
+      "black-crappie",
+      "bluegill"
+    ],
+    "expected" : "black-sea-bass",
+    "file" : "black-sea-bass-152545514.jpg",
+    "seconds" : 0.07718098163604736,
+    "similarities" : [
+      0.2835079,
+      0.2782297,
+      0.274254
+    ],
+    "suitable" : true,
+    "taxon" : "Centropristis striata"
+  },
+  {
+    "candidates" : [
+
+    ],
+    "expected" : "black-sea-bass",
+    "file" : "black-sea-bass-164609360.jpg",
+    "seconds" : 0.07610297203063965,
+    "similarities" : [
+
+    ],
+    "suitable" : false,
+    "taxon" : "Centropristis striata"
+  },
+  {
+    "candidates" : [
+
+    ],
+    "expected" : "largemouth-bass",
+    "file" : "largemouth-bass-149152282.jpg",
+    "seconds" : 0.07350695133209229,
+    "similarities" : [
+
+    ],
+    "suitable" : false,
+    "taxon" : "Micropterus salmoides"
+  },
+  {
+    "candidates" : [
+
+    ],
+    "expected" : "largemouth-bass",
+    "file" : "largemouth-bass-149527879.jpg",
+    "seconds" : 0.07384896278381348,
+    "similarities" : [
+
+    ],
+    "suitable" : false,
+    "taxon" : "Micropterus salmoides"
+  },
+  {
+    "candidates" : [
+      "bluefish",
+      "bluegill",
+      "pumpkinseed"
+    ],
+    "expected" : "bluegill",
+    "file" : "bluegill-147738273.jpg",
+    "seconds" : 0.0820000171661377,
+    "similarities" : [
+      0.28407702,
+      0.2777177,
+      0.2727317
+    ],
+    "suitable" : true,
+    "taxon" : "Lepomis macrochirus"
+  },
+  {
+    "candidates" : [
+
+    ],
+    "expected" : "bluegill",
+    "file" : "bluegill-147800590.jpg",
+    "seconds" : 0.07740497589111328,
+    "similarities" : [
+
+    ],
+    "suitable" : false,
+    "taxon" : "Lepomis macrochirus"
+  },
+  {
+    "candidates" : [
+
+    ],
+    "expected" : "pumpkinseed",
+    "file" : "pumpkinseed-148342978.jpg",
+    "seconds" : 0.07721006870269775,
+    "similarities" : [
+
+    ],
+    "suitable" : false,
+    "taxon" : "Lepomis gibbosus"
+  },
+  {
+    "candidates" : [
+
+    ],
+    "expected" : "pumpkinseed",
+    "file" : "pumpkinseed-148342980.jpg",
+    "seconds" : 0.07545602321624756,
+    "similarities" : [
+
+    ],
+    "suitable" : false,
+    "taxon" : "Lepomis gibbosus"
+  },
+  {
+    "candidates" : [
+      "black-crappie",
+      "common-carp",
+      "summer-flounder"
+    ],
+    "expected" : "black-crappie",
+    "file" : "black-crappie-152879050.jpg",
+    "seconds" : 0.0746150016784668,
+    "similarities" : [
+      0.28117934,
+      0.28108183,
+      0.25985372
+    ],
+    "suitable" : true,
+    "taxon" : "Pomoxis nigromaculatus"
+  },
+  {
+    "candidates" : [
+      "black-crappie",
+      "common-carp",
+      "bluegill"
+    ],
+    "expected" : "black-crappie",
+    "file" : "black-crappie-153101610.jpg",
+    "seconds" : 0.07245790958404541,
+    "similarities" : [
+      0.27823496,
+      0.2524048,
+      0.25214615
+    ],
+    "suitable" : true,
+    "taxon" : "Pomoxis nigromaculatus"
+  },
+  {
+    "candidates" : [
+      "common-carp",
+      "yellow-perch",
+      "black-crappie"
+    ],
+    "expected" : "yellow-perch",
+    "file" : "yellow-perch-148233634.jpg",
+    "seconds" : 0.07427895069122314,
+    "similarities" : [
+      0.25552773,
+      0.22687642,
+      0.22048257
+    ],
+    "suitable" : true,
+    "taxon" : "Perca flavescens"
+  },
+  {
+    "candidates" : [
+
+    ],
+    "expected" : "yellow-perch",
+    "file" : "yellow-perch-150733403.jpg",
+    "seconds" : 0.07357895374298096,
+    "similarities" : [
+
+    ],
+    "suitable" : false,
+    "taxon" : "Perca flavescens"
+  },
+  {
+    "candidates" : [
+
+    ],
+    "expected" : "common-carp",
+    "file" : "common-carp-145826889.jpg",
+    "seconds" : 0.07436704635620117,
+    "similarities" : [
+
+    ],
+    "suitable" : false,
+    "taxon" : "Cyprinus carpio"
+  },
+  {
+    "candidates" : [
+
+    ],
+    "expected" : "common-carp",
+    "file" : "common-carp-145982345.jpg",
+    "seconds" : 0.07459902763366699,
+    "similarities" : [
+
+    ],
+    "suitable" : false,
+    "taxon" : "Cyprinus carpio"
+  },
+  {
+    "candidates" : [
+
+    ],
+    "expected" : "brown-bullhead",
+    "file" : "brown-bullhead-147570678.jpg",
+    "seconds" : 0.07216906547546387,
+    "similarities" : [
+
+    ],
+    "suitable" : false,
+    "taxon" : "Ameiurus nebulosus"
+  },
+  {
+    "candidates" : [
+
+    ],
+    "expected" : "brown-bullhead",
+    "file" : "brown-bullhead-148622634.jpg",
+    "seconds" : 0.07102596759796143,
+    "similarities" : [
+
+    ],
+    "suitable" : false,
+    "taxon" : "Ameiurus nebulosus"
+  },
+  {
+    "candidates" : [
+
+    ],
+    "expected" : "other-fish",
+    "file" : "other-fish-145721855.jpg",
+    "seconds" : 0.07333707809448242,
+    "similarities" : [
+
+    ],
+    "suitable" : false,
+    "taxon" : "Oncorhynchus mykiss"
+  },
+  {
+    "candidates" : [
+
+    ],
+    "expected" : "other-fish",
+    "file" : "other-fish-146574730.jpg",
+    "seconds" : 0.07549500465393066,
+    "similarities" : [
+
+    ],
+    "suitable" : false,
+    "taxon" : "Oncorhynchus mykiss irideus"
+  },
+  {
+    "candidates" : [
+
+    ],
+    "expected" : "other-fish",
+    "file" : "other-fish-145699186.jpg",
+    "seconds" : 0.07286202907562256,
+    "similarities" : [
+
+    ],
+    "suitable" : false,
+    "taxon" : "Carassius auratus"
+  },
+  {
+    "candidates" : [
+
+    ],
+    "expected" : "other-fish",
+    "file" : "other-fish-147910827.jpg",
+    "seconds" : 0.07437098026275635,
+    "similarities" : [
+
+    ],
+    "suitable" : false,
+    "taxon" : "Carassius auratus"
+  },
+  {
+    "candidates" : [
+
+    ],
+    "expected" : "other-fish",
+    "file" : "other-fish-170986765.jpg",
+    "seconds" : 0.07574498653411865,
+    "similarities" : [
+
+    ],
+    "suitable" : false,
+    "taxon" : "Prionotus carolinus"
+  },
+  {
+    "candidates" : [
+
+    ],
+    "expected" : "other-fish",
+    "file" : "other-fish-172072234.jpg",
+    "seconds" : 0.07507503032684326,
+    "similarities" : [
+
+    ],
+    "suitable" : false,
+    "taxon" : "Prionotus carolinus"
+  },
+  {
+    "candidates" : [
+
+    ],
+    "expected" : "no-fish",
+    "file" : "no-fish-145704687.jpg",
+    "seconds" : 0.08161890506744385,
+    "similarities" : [
+
+    ],
+    "suitable" : false,
+    "taxon" : "Canis familiaris"
+  },
+  {
+    "candidates" : [
+
+    ],
+    "expected" : "no-fish",
+    "file" : "no-fish-145747393.jpg",
+    "seconds" : 0.07673895359039307,
+    "similarities" : [
+
+    ],
+    "suitable" : false,
+    "taxon" : "Canis familiaris familiaris"
+  },
+  {
+    "candidates" : [
+
+    ],
+    "expected" : "no-fish",
+    "file" : "no-fish-145571950.jpg",
+    "seconds" : 0.0783919095993042,
+    "similarities" : [
+
+    ],
+    "suitable" : false,
+    "taxon" : "Felis catus"
+  },
+  {
+    "candidates" : [
+
+    ],
+    "expected" : "no-fish",
+    "file" : "no-fish-145606641.jpg",
+    "seconds" : 0.07350099086761475,
+    "similarities" : [
+
+    ],
+    "suitable" : false,
+    "taxon" : "Felis catus"
+  },
+  {
+    "candidates" : [
+
+    ],
+    "expected" : "no-fish",
+    "file" : "no-fish-145955425.jpg",
+    "seconds" : 0.07698297500610352,
+    "similarities" : [
+
+    ],
+    "suitable" : false,
+    "taxon" : "Helianthus annuus"
+  },
+  {
+    "candidates" : [
+
+    ],
+    "expected" : "no-fish",
+    "file" : "no-fish-147267587.jpg",
+    "seconds" : 0.07824599742889404,
+    "similarities" : [
+
+    ],
+    "suitable" : false,
+    "taxon" : "Helianthus annuus"
+  }
+]

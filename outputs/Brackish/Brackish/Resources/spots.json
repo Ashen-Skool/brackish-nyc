@@ -1,0 +1,128 @@
+[
+  {
+    "id": "gantry",
+    "name": "Gantry Plaza",
+    "borough": "Queens",
+    "water": "Saltwater",
+    "latitude": 40.7441,
+    "longitude": -73.9601,
+    "subtitle": "The city, seen from the water.",
+    "access": "Use the designated fishing pier. Follow current park signs and avoid ferry operations. The pin marks the park vicinity, not a guaranteed open casting position.",
+    "why": "A designated pier makes this a useful starting point for an East River shore trip. Coastal species below are regional possibilities, not a site-specific catch report.",
+    "speciesIDs": [
+      "striped-bass",
+      "bluefish",
+      "scup"
+    ],
+    "source": "https://parks.ny.gov/visit/state-parks/gantry-plaza-state-park"
+  },
+  {
+    "id": "prospect",
+    "name": "Prospect Park Lake",
+    "borough": "Brooklyn",
+    "water": "Freshwater",
+    "latitude": 40.6527,
+    "longitude": -73.9715,
+    "subtitle": "A freshwater chapter in Brooklyn.",
+    "access": "Fish from permitted shoreline areas; respect fences and refuge signs. Catch and release, barbless hooks and non-lead weights.",
+    "why": "A practical lake choice for a light tackle outing. DEC documents bass and sunfish here; vegetation favors weedless presentations.",
+    "speciesIDs": [
+      "largemouth-bass",
+      "bluegill",
+      "pumpkinseed",
+      "black-crappie",
+      "common-carp"
+    ],
+    "source": "https://dec.ny.gov/places/prospect-park-lake"
+  },
+  {
+    "id": "pier34",
+    "name": "Pier 34",
+    "borough": "Manhattan",
+    "water": "Saltwater",
+    "latitude": 40.7221,
+    "longitude": -74.0139,
+    "subtitle": "Two fingers reaching into the Hudson.",
+    "access": "Use the public southern finger. The northern finger belongs to tunnel operations and is closed to the public. Follow posted fishing restrictions.",
+    "why": "The park identifies the southern finger as a fishing place. A clear choice for a Manhattan estuary visit; regional species are possibilities, not predictions.",
+    "speciesIDs": [
+      "striped-bass",
+      "bluefish"
+    ],
+    "source": "https://hudsonriverpark.org/locations/pier-34/"
+  },
+  {
+    "id": "van-cortlandt",
+    "name": "Van Cortlandt Lake",
+    "borough": "Bronx",
+    "water": "Freshwater",
+    "latitude": 40.884,
+    "longitude": -73.8945,
+    "subtitle": "A quiet edge below the woods.",
+    "access": "Shoreline includes grassy and steeper wooded areas. Choose a stable, permitted place to stand; the 1 train reaches 242nd Street nearby.",
+    "why": "DEC records a diverse warmwater community. Suits a patient bass or panfish session with light tackle.",
+    "speciesIDs": [
+      "largemouth-bass",
+      "bluegill",
+      "black-crappie",
+      "yellow-perch",
+      "brown-bullhead"
+    ],
+    "source": "https://dec.ny.gov/places/van-cortlandt-lake"
+  },
+  {
+    "id": "kissena",
+    "name": "Kissena Lake",
+    "borough": "Queens",
+    "water": "Freshwater",
+    "latitude": 40.7473,
+    "longitude": -73.8054,
+    "subtitle": "Small water. Plenty to observe.",
+    "access": "Public shoreline in Kissena Park. Avoid discolored water or visible algal blooms and follow closures. Catch and release only.",
+    "why": "A compact lake for a simple float rig. DEC\u2019s 2022 survey documented bass, sunfish, bullhead and crappie; it is historical evidence.",
+    "speciesIDs": [
+      "largemouth-bass",
+      "bluegill",
+      "pumpkinseed",
+      "brown-bullhead",
+      "black-crappie"
+    ],
+    "source": "https://extapps.dec.ny.gov/docs/fish_marine_pdf/tb2kissena.pdf"
+  },
+  {
+    "id": "clove",
+    "name": "Clove Lake",
+    "borough": "Staten Island",
+    "water": "Freshwater",
+    "latitude": 40.6171,
+    "longitude": -74.1059,
+    "subtitle": "An island lake beneath the trees.",
+    "access": "Choose permitted shoreline at Clove Lakes Park. Respect other park users, posted access and vegetated edges.",
+    "why": "A Staten Island freshwater option with bass and panfish listed by DEC. Bring a small float rig and a landing net.",
+    "speciesIDs": [
+      "largemouth-bass",
+      "bluegill",
+      "black-crappie",
+      "brown-bullhead"
+    ],
+    "source": "https://dec.ny.gov/places/clove-lake"
+  },
+  {
+    "id": "steeplechase",
+    "name": "Steeplechase Pier",
+    "borough": "Brooklyn",
+    "water": "Saltwater",
+    "latitude": 40.57,
+    "longitude": -73.9853,
+    "subtitle": "Where the boardwalk meets the Atlantic.",
+    "access": "The fishing pier is off the boardwalk near West 19th Street. Exposed conditions can change quickly; check signs and keep clear of waves.",
+    "why": "A designated shore-fishing destination on DEC\u2019s NYC map. Suits an open-coast outing with saltwater gear; species are regional possibilities.",
+    "speciesIDs": [
+      "bluefish",
+      "striped-bass",
+      "summer-flounder",
+      "scup"
+    ],
+    "source": "https://dec.ny.gov/media/26796"
+  }
+]
