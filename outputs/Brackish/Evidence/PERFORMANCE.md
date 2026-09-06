@@ -44,6 +44,23 @@ and motion preference acceptance remain explicitly pending.
 A later 45-second walkthrough callback capture (`motion-cadence-walkthrough.json`)
 recorded median/p95 16.67 ms, p99 54.63 ms, maximum 399.87 ms and 72/2,421
 intervals above 25 ms. It is still not a rendered-FPS measurement. At the final
-live review the computer-use tool reported a locked desktop. Recordings show
-transition-frame artifacts, so visual motion acceptance is pending an unlocked
-foreground review; no cause or 60 fps success is inferred.
+live review the computer-use tool reported a locked desktop. Those earlier recordings showed transition-frame artifacts; that review was
+therefore deferred. It was completed in the unlocked foreground session below.
+
+## Unlocked foreground review — September 6, 2026
+
+The owner unlocked the Studio and the Simulator window was explicitly raised.
+The full scripted walkthrough passed again. Live forward/back chapter navigation,
+a short sheet drag, and continuous recorded-frame review showed normal settling
+without persistent overlaid text or a stuck veil. The final movie replaces the
+provisional capture. The old capture's cause is not established.
+
+The new 45-second callback sample (`motion-cadence-unlocked.json`) contains 2,376
+intervals: median/p95 16.67 ms, p99 53.82 ms, maximum 431.62 ms, with 88 intervals
+above 25 ms. Those tails still do not support a sustained 60 fps claim. This is
+callback cadence during automated UI/system-sheet interaction, not GPU render
+timing. The Instruments platform limitation and physical-device gates are unchanged.
+
+Video review uses frame-rate normalization before selecting time windows: the
+simulator movie has sparse/variable frame timestamps, and selecting discontinuous
+windows before normalization can create misleading repeated-frame strips.

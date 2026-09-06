@@ -18,4 +18,6 @@ Start with [the project README](outputs/Brackish/README.md),
 The Xcode project, editable art originals, generation prompts, licenses, tests and
 evidence are in [outputs/Brackish](outputs/Brackish). Photo suggestions are experimental
 and require manual confirmation. Physical-device accuracy/performance are not claimed.
-Live motion acceptance is pending an unlocked Studio; the current recording is provisional.
+The foreground simulator motion review is complete.
+[Watch the actual app walkthrough](outputs/Brackish/Evidence/Brackish-walkthrough.mp4).
+Physical-device and sustained 60 fps claims remain unverified.

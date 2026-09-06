@@ -100,11 +100,26 @@ catch is marked as a showcase example with an attributed iNaturalist photograph,
 not a personal catch. Original artwork, generation prompts, flattened editable PNGs,
 editable Swift layouts/motion, source/content provenance and licenses are delivered.
 
-## Desktop lock at final motion review
+## Foreground motion review completed — September 6, 2026
 
-The computer-use tool reported that the Mac Studio was locked and automatic unlock
-failed. A live, foreground review is pending an owner unlock. Automated recordings
-contain transition-frame artifacts; their cause has not been confirmed. Passing
-the scripted journey and obtaining a movie file do not establish accepted visual
-motion quality. The recording is marked provisional. Source/build/functionality
-checks are independent of this remaining visual gate.
+After the owner unlocked the Mac Studio, the Simulator window was raised and the
+app was reviewed live in the foreground. Forward and reverse onboarding changes
+settled normally; the old/new text did not remain overlaid. A short downward drag
+on the Gantry Plaza detail sheet left the sheet open and settled. A fresh full
+walkthrough test passed, covering onboarding, map-to-detail presentation, photo
+import, candidate selection, journal save, tab changes and scrolling.
+
+The new recording was checked using continuous time-normalized frame sequences,
+including chapter changes, sheet presentation, photo scrolling and save dismissal.
+The previous persistent-looking transition artifacts were not reproduced in this
+foreground review. The earlier capture's cause is not asserted. The simulator
+stream is variable-frame-rate; frame sampling must normalize timing before
+selecting windows, otherwise selection gaps can misleadingly repeat a frame.
+
+`Evidence/Brackish-walkthrough.mp4` replaces the provisional recording. It contains
+actual simulator output, with only the test-launch lead-in trimmed and a delivery
+resize. `tests-unlocked-walkthrough-summary.json` records the passing run;
+`unlocked-live-transition.png`, `unlocked-motion-frame-review.jpg` and
+`sheet-short-drag-unlocked.png` preserve review evidence. The locked-desktop blocker
+is resolved. This is simulator visual acceptance, not physical-device or 60 fps
+certification; the other release boundaries above remain in force.

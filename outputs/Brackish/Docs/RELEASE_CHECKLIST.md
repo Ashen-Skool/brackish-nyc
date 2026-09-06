@@ -10,7 +10,7 @@
 - [x] Privacy notices, stripped photo GPS, coarse/withheld catch areas, export and deletion.
 - [x] Core, UI, location and metadata checks; known native audit false positive documented.
 - [x] Actual simulator screenshots and an automated recording; measured limitations retained.
-- [ ] Accept the live foreground motion review and final showcase video after the Studio is unlocked.
+- [x] Live foreground motion review and replacement showcase video accepted on the unlocked Studio, September 6, 2026.
 - [x] Clean-clone Release build, MIT license and third-party notices.
 - [x] Code and delivery materials committed and pushed to the GitHub source of truth.
 

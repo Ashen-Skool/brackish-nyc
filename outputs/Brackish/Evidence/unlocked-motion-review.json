@@ -1,0 +1,24 @@
+{
+  "reviewDate": "2026-09-06",
+  "environment": "Unlocked, foreground Mac Studio; iPhone 16 simulator / iOS 26.5",
+  "sourceChanged": false,
+  "scriptedJourney": "Passed",
+  "manualChecks": [
+    "Forward onboarding transition settles",
+    "Reverse onboarding transition settles",
+    "Privacy-to-atlas handoff",
+    "Short downward detail-sheet drag remains open and settles"
+  ],
+  "recordingChecks": [
+    "Continuous time-normalized chapter frames",
+    "Map-to-detail sheet presentation",
+    "Photo import and scrolling",
+    "Candidate selection",
+    "Journal save dismissal",
+    "Tab changes and scrolling"
+  ],
+  "visualReview": "Accepted for simulator showcase",
+  "physicalDeviceFPSVerified": false,
+  "priorCaptureCause": "Not established",
+  "video": "Brackish-walkthrough.mp4"
+}
