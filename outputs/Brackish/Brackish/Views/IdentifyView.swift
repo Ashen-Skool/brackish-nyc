@@ -24,8 +24,8 @@ struct IdentifyView: View {
             EditorialTitle(text:"Every fish\nhas a story.")
             Text("Start with a photograph. Keep the fish in the water and use a clear side view.").foregroundStyle(Ink.quiet)
             ZStack {
-                if let photo, let image = UIImage(data:photo) {
-                    Image(uiImage:image).resizable().scaledToFit().frame(maxWidth:.infinity,maxHeight:300).background(Ink.deep)
+                if let photo {
+                    PhotoView(data:photo).frame(maxWidth:.infinity).frame(height:270).background(Ink.deep)
                 } else {
                     VStack(spacing:10) {
                         Image("Pip").resizable().scaledToFit().frame(height:180).accessibilityHidden(true)

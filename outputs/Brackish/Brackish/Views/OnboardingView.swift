@@ -9,8 +9,11 @@ struct OnboardingView: View {
         GeometryReader { proxy in
             ZStack {
                 if page == 0 {
-                    Ink.deep.ignoresSafeArea()
-                    Image("Harbor").resizable().scaledToFill().frame(width: proxy.size.width, height: proxy.size.height + proxy.safeAreaInsets.top + proxy.safeAreaInsets.bottom).clipped().ignoresSafeArea().accessibilityHidden(true)
+                    Ink.deep.ignoresSafeArea().overlay {
+                        GeometryReader { backdrop in
+                            Image("Harbor").resizable().scaledToFill().frame(width:backdrop.size.width,height:backdrop.size.height).clipped()
+                        }.ignoresSafeArea()
+                    }.accessibilityHidden(true)
                     Color.black.opacity(0.1).ignoresSafeArea()
                 } else { Ink.paper.ignoresSafeArea() }
                 VStack(alignment: .leading, spacing: 20) {

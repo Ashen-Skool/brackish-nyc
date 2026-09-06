@@ -27,7 +27,7 @@ struct JournalView: View {
                             HStack { Text(entry.date.formatted(date:.abbreviated,time:.shortened)).font(.caption.monospacedDigit()).textCase(.uppercase).foregroundStyle(Ink.rust);Spacer();Image(systemName:"arrow.up.right") }
                             Text(Catalog.fish(entry.speciesID)?.name ?? "Unknown fish").font(.system(.title,design:.serif))
                             HStack { Text(entry.area);if let length=entry.lengthInches { Text("· \(length.formatted()) in") } }.font(.subheadline).foregroundStyle(Ink.quiet)
-                            if let name=entry.photoFilename,let url=store.vault?.photo(name),let image=UIImage(contentsOfFile:url.path) { Image(uiImage:image).resizable().scaledToFill().frame(height:200).clipped().accessibilityLabel("Catch photograph") }
+                            if let name=entry.photoFilename,let url=store.vault?.photo(name) { PhotoView(url:url,fill:true).frame(height:200).clipped() }
                             if !entry.notes.isEmpty { Text(entry.notes).font(.body).lineLimit(3).multilineTextAlignment(.leading) }
                         }.padding(.bottom,16).contentShape(Rectangle())
                     }.buttonStyle(.plain).accessibilityIdentifier("journal-entry")
@@ -54,7 +54,7 @@ struct CatchDetailView:View {
                 Eyebrow(text:entry.date.formatted(date:.abbreviated,time:.shortened)).foregroundStyle(Ink.rust)
                 EditorialTitle(text:Catalog.fish(entry.speciesID)?.name ?? "Unknown fish")
                 Text(entry.area).foregroundStyle(Ink.quiet)
-                if let name=entry.photoFilename,let url=store.vault?.photo(name),let image=UIImage(contentsOfFile:url.path) { Image(uiImage:image).resizable().scaledToFit().accessibilityLabel("Saved catch photograph") }
+                if let name=entry.photoFilename,let url=store.vault?.photo(name) { PhotoView(url:url).frame(minHeight:180,maxHeight:360) }
                 Rule()
                 HStack(spacing:30) { if let length=entry.lengthInches { VStack(alignment:.leading) { Eyebrow(text:"Length"); Text("\(length.formatted()) in").font(.title2).fontDesign(.serif) } };if let weight=entry.weightPounds { VStack(alignment:.leading) { Eyebrow(text:"Weight");Text("\(weight.formatted()) lb").font(.title2).fontDesign(.serif) } } }
                 Text(entry.notes.isEmpty ? "No notes yet. Add a detail while it’s still fresh." : entry.notes).textSelection(.enabled)
@@ -85,8 +85,8 @@ struct CatchEditorView:View {
     var body:some View {
         Form {
             Section {
-                if let data=photo,let image=UIImage(data:data) { Image(uiImage:image).resizable().scaledToFit().frame(maxHeight:200).frame(maxWidth:.infinity).accessibilityLabel("Entry photograph") }
-                else if let name=entry.photoFilename,let url=store.vault?.photo(name),let image=UIImage(contentsOfFile:url.path) { Image(uiImage:image).resizable().scaledToFit().frame(maxHeight:200).frame(maxWidth:.infinity) }
+                if let data=photo { PhotoView(data:data).frame(height:200).frame(maxWidth:.infinity) }
+                else if let name=entry.photoFilename,let url=store.vault?.photo(name) { PhotoView(url:url).frame(height:200).frame(maxWidth:.infinity) }
                 PhotosPicker(selection:$item,matching:.images) { Label(importing ? "Importing…" : "Add or replace photo",systemImage:"photo") }.disabled(importing)
                 if photo != nil || entry.photoFilename != nil {
                     Button("Remove photo from entry",role:.destructive) { photo=nil;entry.photoFilename=nil }

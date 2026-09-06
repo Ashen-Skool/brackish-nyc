@@ -96,7 +96,7 @@ final class JournalVault {
         } catch { self.error = error.localizedDescription; return false }
     }
     func deleteEntry(_ entry: CatchEntry) {
-        if transact({ $0.catches.removeAll { $0.id == entry.id } }) { vault?.removePhoto(entry.photoFilename) }
+        if transact({ $0.catches.removeAll { $0.id == entry.id } }) { vault?.removePhoto(entry.photoFilename);Task {await PhotoLoader.shared.clear()} }
     }
     func createTrip(_ spot: FishingSpot) -> UUID? {
         let trip = TripPlan(spotID: spot.id, items: Catalog.checklist(fresh: spot.isFresh))
@@ -109,7 +109,7 @@ final class JournalVault {
     }
     func deleteTrip(_ id: UUID) { _ = transact { $0.trips.removeAll { $0.id == id } } }
     func erase() {
-        do { try vault?.deleteAll(); state = LocalState(); ready = vault != nil; error = nil }
+        do { try vault?.deleteAll(); state = LocalState(); ready = vault != nil; error = nil;Task {await PhotoLoader.shared.clear()} }
         catch { self.error = "Deletion was interrupted. Reopen Settings and retry: \(error.localizedDescription)" }
     }
     func export(includePrivateDetails: Bool) throws -> JournalDocument {

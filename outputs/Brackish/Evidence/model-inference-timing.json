@@ -1,0 +1,7 @@
+{
+  "environment": "iPhone 16 iOS 26.5 simulator on M3 Ultra; CPU-only Core ML. Not device latency.",
+  "n": 36,
+  "medianMs": 144.0800428390503,
+  "p95Ms": 151.6169309616089,
+  "maxMs": 715.2019739151001
+}

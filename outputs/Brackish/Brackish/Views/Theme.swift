@@ -57,7 +57,7 @@ struct SourceLink: View {
 struct PaperScreen<Content: View>: View {
     @ViewBuilder var content: () -> Content
     var body: some View {
-        ScrollView { VStack(alignment: .leading, spacing: 24, content: content).frame(maxWidth: 720, alignment: .leading).padding(24).frame(maxWidth: .infinity) }
+        ScrollView { LazyVStack(alignment: .leading, spacing: 24, content: content).frame(maxWidth: 720, alignment: .leading).padding(24).frame(maxWidth: .infinity) }
             .background(Ink.paper).foregroundStyle(Ink.deep)
     }
 }

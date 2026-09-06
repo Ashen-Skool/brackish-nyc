@@ -1,7 +1,7 @@
 import XCTest
 /// A repeatable motion capture, using actual controls and a separate test journal.
 final class ShowcaseTests:XCTestCase {
-    func shot(_ name:String) {let a=XCTAttachment(screenshot:XCUIScreen.main.screenshot());a.name=name;a.lifetime = .keepAlways;add(a)}
+    func shot(_ name:String) {Thread.sleep(forTimeInterval:0.8);let a=XCTAttachment(screenshot:XCUIScreen.main.screenshot());a.name=name;a.lifetime = .keepAlways;add(a)}
     func testWalkthroughAndMotion() {
         let app=XCUIApplication();app.launchArguments=["--ui-testing","--reset-test-data","--measure-motion"];app.launch()
         XCTAssertTrue(app.buttons["onboarding-next"].waitForExistence(timeout:8));shot("01-underwater-arrival")
