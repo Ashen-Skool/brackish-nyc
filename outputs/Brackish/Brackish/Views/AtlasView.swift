@@ -12,7 +12,7 @@ struct AtlasView: View {
     @State private var onlySaved = false
     @State private var selected: FishingSpot?
     @State private var camera: MapCameraPosition = .region(Self.cityRegion)
-    static let cityRegion = MKCoordinateRegion(center: .init(latitude:40.729,longitude:-73.965),span:.init(latitudeDelta:0.40,longitudeDelta:0.37))
+    static let cityRegion = MKCoordinateRegion(center: .init(latitude:40.729,longitude:-73.965),span:.init(latitudeDelta:0.46,longitudeDelta:0.43))
     var origin: CLLocation? { area == "Near me" ? location.location : nil }
     var matches: [FishingSpot] { Catalog.search(Catalog.spots,query:query,water:water,area:area,origin:origin).filter { !onlySaved || store.state.savedSpotIDs.contains($0.id) } }
     var body: some View {
@@ -31,7 +31,7 @@ struct AtlasView: View {
                         }
                     }
                 }.mapStyle(.standard(elevation:.flat,emphasis:.muted,pointsOfInterest:.excludingAll,showsTraffic:false)).mapControls { MapCompass(); MapScaleView() }
-                    .environment(\.colorScheme,.dark).frame(height:300).overlay(alignment:.topLeading) { Text("NEW YORK CITY  /  SHORE ACCESS").font(.system(.caption2,design:.monospaced)).tracking(1.5).padding(10).background(Ink.deep.opacity(0.85)).foregroundStyle(Ink.paper).padding(10).allowsHitTesting(false) }
+                    .environment(\.colorScheme,.dark).frame(height:300)
                     .accessibilityLabel("Interactive NYC fishing map. All places are also in the list below.")
                 VStack(alignment:.leading,spacing:18) {
                     if connection.offline { Label("Offline: saved reference content works. Map tiles, directions and links may need a connection.",systemImage:"wifi.slash").font(.subheadline).foregroundStyle(Ink.rust) }
