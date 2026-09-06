@@ -56,7 +56,15 @@ struct TripDetailView:View {
                 }
                 Section("Before you leave") {
                     ForEach(trip.items) { item in
-                        Toggle(isOn:Binding(get:{item.checked},set:{value in var copy=trip;if let i=copy.items.firstIndex(where:{$0.id == item.id}) {copy.items[i].checked=value;store.updateTrip(copy);tactile()}})) { Text(item.title) }.tint(Ink.teal).accessibilityIdentifier("checklist-item")
+                        Button {
+                            var copy=trip
+                            if let i=copy.items.firstIndex(where:{$0.id == item.id}) {copy.items[i].checked.toggle();store.updateTrip(copy);tactile()}
+                        } label: {
+                            HStack(alignment:.top,spacing:14) {
+                                Image(systemName:item.checked ? "checkmark.circle.fill" : "circle").font(.title3).foregroundStyle(Ink.teal)
+                                Text(item.title).foregroundStyle(Ink.deep).frame(maxWidth:.infinity,alignment:.leading)
+                            }.padding(.vertical,8).contentShape(Rectangle())
+                        }.buttonStyle(.plain).accessibilityLabel(item.title).accessibilityValue(item.checked ? "Packed" : "Not packed").accessibilityIdentifier("checklist-item")
                             .swipeActions { Button("Delete",role:.destructive) {var copy=trip;copy.items.removeAll{$0.id == item.id};store.updateTrip(copy)} }
                     }
                     HStack { TextField("Add something to bring",text:$newItem).accessibilityIdentifier("new-checklist-item");Button {add(to:trip)} label:{Image(systemName:"plus.circle.fill").frame(width:44,height:44)}.disabled(newItem.trimmingCharacters(in:.whitespacesAndNewlines).isEmpty).accessibilityLabel("Add checklist item") }.onSubmit {add(to:trip)}

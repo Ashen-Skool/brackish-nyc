@@ -12,6 +12,6 @@ final class JourneysTests:XCTestCase {
         XCTAssertTrue(app.buttons["journal-entry"].waitForExistence(timeout:8))
         app.terminate();app.launchArguments=["--ui-testing"];app.launch();app.buttons["tab-journal"].tap()
         XCTAssertTrue(app.staticTexts["A quiet afternoon by the water."].waitForExistence(timeout:8))
-        let shot=XCTAttachment(screenshot:app.screenshot());shot.name="journal-persistence";shot.lifetime = .keepAlways;add(shot)
+        let shot=XCTAttachment(screenshot:XCUIScreen.main.screenshot());shot.name="journal-persistence";shot.lifetime = .keepAlways;add(shot)
     }
 }

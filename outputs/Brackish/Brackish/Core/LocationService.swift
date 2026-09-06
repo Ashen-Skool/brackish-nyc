@@ -14,8 +14,8 @@ import Network
         switch manager.authorizationStatus {
         case .notDetermined: waiting = true; manager.requestWhenInUseAuthorization()
         case .authorizedAlways, .authorizedWhenInUse: locate()
-        case .denied, .restricted: message = "Location is unavailable. Choose a borough below to explore, or enable location in Settings."
-        @unknown default: message = "Choose a borough to explore without location access."
+        case .denied, .restricted: waiting = false; message = "Location is unavailable. Choose a borough below to explore, or enable location in Settings."
+        @unknown default: waiting = false; message = "Choose a borough to explore without location access."
         }
     }
     private func locate() {

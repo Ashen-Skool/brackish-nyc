@@ -1,4 +1,5 @@
 import XCTest
+import UIKit
 @testable import Brackish
 
 final class CoreTests:XCTestCase {
@@ -43,6 +44,28 @@ final class CoreTests:XCTestCase {
         var vector=Array(repeating:Float(0),count:512);vector[0]=1
         let prompts=[RecognitionPrompt(id:"no-fish",text:"dog",vector:vector),RecognitionPrompt(id:"bluegill",text:"fish",vector:vector.map{$0*0.2})]
         XCTAssertFalse(CandidateRanker.rank(vector:vector,prompts:prompts,elapsed:0).suitable)
+    }
+    func testModelReceivesUnitRGBWithoutDoubleNormalization() throws {
+        let format=UIGraphicsImageRendererFormat();format.scale=1
+        let image=UIGraphicsImageRenderer(size:CGSize(width:80,height:80),format:format).image { context in
+            UIColor.red.setFill();context.fill(CGRect(x:0,y:0,width:80,height:80))
+        }
+        let tensor=try FishRecognizer.tensor(data:XCTUnwrap(image.pngData()))
+        XCTAssertEqual(tensor[0].floatValue,1,accuracy:0.01)
+        XCTAssertEqual(tensor[224*224].floatValue,0,accuracy:0.01)
+        XCTAssertEqual(tensor[2*224*224].floatValue,0,accuracy:0.01)
+    }
+    func testEssentialColorContrast() {
+        func luminance(_ color:UIColor)->Double {
+            var r:CGFloat=0,g:CGFloat=0,b:CGFloat=0,a:CGFloat=0
+            XCTAssertTrue(color.getRed(&r,green:&g,blue:&b,alpha:&a))
+            let channels=[r,g,b].map { x -> Double in let v=Double(x);return v<=0.04045 ? v/12.92 : pow((v+0.055)/1.055,2.4) }
+            return channels[0]*0.2126+channels[1]*0.7152+channels[2]*0.0722
+        }
+        let paper=luminance(UIColor(Ink.paper)),deep=luminance(UIColor(Ink.deep)),rust=luminance(UIColor(Ink.rust)),quiet=luminance(UIColor(Ink.quiet))
+        XCTAssertGreaterThan((paper+0.05)/(deep+0.05),7)
+        XCTAssertGreaterThan((paper+0.05)/(rust+0.05),4.5)
+        XCTAssertGreaterThan((paper+0.05)/(quiet+0.05),4.5)
     }
     @MainActor func testExportRedactsNotesAndAreaByDefault() throws {
         let store=JournalStore(root:root);let entry=CatchEntry(area:"Queens",notes:"Private memory")

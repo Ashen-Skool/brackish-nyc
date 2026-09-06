@@ -13,7 +13,7 @@ struct JournalView: View {
             EditorialTitle(text:"The field\njournal.")
             Text(store.state.catches.isEmpty ? "Some days, the best thing you bring home is a story." : "\(store.state.catches.count) \(store.state.catches.count == 1 ? "moment" : "moments") by the water, kept here.").foregroundStyle(Ink.quiet)
             if store.state.catches.isEmpty {
-                Button { adding=true } label: { Label("Write a new entry",systemImage:"square.and.pencil") }.buttonStyle(PrimaryButton()).accessibilityIdentifier("new-journal-entry")
+                Button { adding=true } label: { Label("Write a new entry",systemImage:"square.and.pencil") }.buttonStyle(PrimaryButton()).accessibilityElement(children:.ignore).accessibilityLabel("Write a new entry").accessibilityAddTraits(.isButton).accessibilityIdentifier("new-journal-entry")
                 Image("Pip").resizable().scaledToFit().frame(height:220).frame(maxWidth:.infinity).accessibilityHidden(true)
                 Rule();Text("Your first page is waiting.").font(.system(.title2,design:.serif))
                 Text("A catch, a place, a detail you don’t want to forget. Start with what you know; unknown is welcome here.")
@@ -34,7 +34,7 @@ struct JournalView: View {
                 }
             }
             if !store.state.catches.isEmpty {
-                Button { adding=true } label: { Label("Write a new entry",systemImage:"square.and.pencil") }.buttonStyle(PrimaryButton()).accessibilityIdentifier("new-journal-entry")
+                Button { adding=true } label: { Label("Write a new entry",systemImage:"square.and.pencil") }.buttonStyle(PrimaryButton()).accessibilityElement(children:.ignore).accessibilityLabel("Write a new entry").accessibilityAddTraits(.isButton).accessibilityIdentifier("new-journal-entry")
             }
             PipNote(text:"A journal doesn’t need a trophy. Notice the color of the water, the fish’s markings, or how it felt to be there.")
         }.sheet(item:$selected) { entry in NavigationStack { CatchDetailView(entryID:entry.id) } }

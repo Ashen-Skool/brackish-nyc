@@ -8,6 +8,7 @@ struct SettingsView:View {
     @State private var includePrivate=false
     @State private var erasing=false
     @State private var localError:String?
+    @State private var exportNotice:String?
     var body:some View {
         List {
             Section {
@@ -18,6 +19,7 @@ struct SettingsView:View {
                 Toggle("Include area and written notes",isOn:$includePrivate)
                 Text("By default, exported catch areas and notes are omitted. Photos, dates, measurements, saved spots and checklists are included. Photos may visibly reveal a place; review before sharing. The JSON file contains JPEG photos encoded as base64.").font(.caption).foregroundStyle(Ink.quiet)
                 Button("Export journal & photos") {do {document=try store.export(includePrivateDetails:includePrivate);exporting=true}catch{localError=error.localizedDescription}}.accessibilityIdentifier("export-journal")
+                if let exportNotice { Text(exportNotice).font(.subheadline).foregroundStyle(Ink.teal).accessibilityIdentifier("export-result") }
                 if !store.ready,let url=store.vault?.stateURL { Button("Export preserved recovery file") {do{document=JournalDocument(data:try Data(contentsOf:url));exporting=true}catch{localError=error.localizedDescription}} }
             }
             Section("Privacy, in plain language") {
@@ -32,6 +34,11 @@ struct SettingsView:View {
                 Text("The model can confuse lookalikes, juvenile fish, lures, multiple subjects and species outside the reference set. Low-quality photos can fail. Use a clear side view and check several markings. Never infer edibility, legal possession or current fishing conditions.")
                 Text("No accuracy or physical-device performance claim is made. The project includes the evaluation set, results and measured limitations.").font(.caption)
                 SourceLink(title:"CLIP model and MIT license",url:"https://github.com/openai/CLIP")
+                NavigationLink("Third-party notices") {
+                    ScrollView {
+                        Text(notices).font(.footnote).textSelection(.enabled).padding(24)
+                    }.background(Ink.paper).navigationTitle("Notices")
+                }
             }
             Section("Sources & changing rules") {
                 Text("Reference reviewed \(Catalog.reviewDate). Bundled notes work offline. External links, map tiles and directions may not. Recheck official rules and posted access before each outing.").font(.subheadline)
@@ -49,8 +56,15 @@ struct SettingsView:View {
         }.scrollContentBackground(.hidden).background(Ink.paper).foregroundStyle(Ink.deep)
             .navigationTitle("Settings & privacy").navigationBarTitleDisplayMode(.inline)
             .toolbar {ToolbarItem(placement:.topBarTrailing) {Button("Done") {dismiss()}}}
-            .fileExporter(isPresented:$exporting,document:document,contentType:.json,defaultFilename:"Brackish-journal") {result in if case .failure(let error)=result {localError="Export was not completed. \(error.localizedDescription)"}}
+            .fileExporter(isPresented:$exporting,document:document,contentType:.json,defaultFilename:"Brackish-journal") {result in
+                switch result {case .success: exportNotice="Your journal was exported. Keep the file somewhere safe."
+                case .failure(let error): localError="Export was not completed. \(error.localizedDescription)"}
+            }
             .confirmationDialog("Delete all local Brackish data? This cannot be undone.",isPresented:$erasing,titleVisibility:.visible) {Button("Delete all local data",role:.destructive) {store.erase();dismiss()}}
             .alert("Couldn’t complete that action",isPresented:Binding(get:{localError != nil},set:{if !$0{localError=nil}})) {Button("OK",role:.cancel){localError=nil}} message:{Text(localError ?? "")}
+    }
+    private var notices:String {
+        guard let url=Bundle.main.url(forResource:"ThirdPartyNotices",withExtension:"txt"),let text=try? String(contentsOf:url,encoding:.utf8) else {return "See the THIRD_PARTY_NOTICES.md file in the source project."}
+        return text
     }
 }

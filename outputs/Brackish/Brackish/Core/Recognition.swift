@@ -43,6 +43,9 @@ actor FishRecognizer {
         if model == nil {
             guard let url = Bundle.main.url(forResource: "FishEncoder", withExtension: "mlmodelc") else { throw RecognitionError.modelMissing }
             let config = MLModelConfiguration(); config.computeUnits = .all
+            #if targetEnvironment(simulator)
+            config.computeUnits = .cpuOnly
+            #endif
             model = try MLModel(contentsOf: url, configuration: config)
         }
         if prompts == nil { prompts = Catalog.read("recognition-prompts") }

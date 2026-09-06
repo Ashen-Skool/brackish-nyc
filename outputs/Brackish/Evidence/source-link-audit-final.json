@@ -1,0 +1,106 @@
+[
+  {
+    "url": "https://content.govdelivery.com/accounts/NYSDEC/bulletins/3a1112e",
+    "status": 200,
+    "resolved": "https://content.govdelivery.com/accounts/NYSDEC/bulletins/3a1112e"
+  },
+  {
+    "url": "https://dec.ny.gov/media/26796",
+    "status": 200,
+    "resolved": "https://dec.ny.gov/sites/default/files/2024-01/nycfishnmap.pdf"
+  },
+  {
+    "url": "https://dec.ny.gov/places/clove-lake",
+    "status": 200,
+    "resolved": "https://dec.ny.gov/places/clove-lake"
+  },
+  {
+    "url": "https://dec.ny.gov/places/prospect-park-lake",
+    "status": 200,
+    "resolved": "https://dec.ny.gov/places/prospect-park-lake"
+  },
+  {
+    "url": "https://dec.ny.gov/places/van-cortlandt-lake",
+    "status": 200,
+    "resolved": "https://dec.ny.gov/places/van-cortlandt-lake"
+  },
+  {
+    "url": "https://dec.ny.gov/things-to-do/freshwater-fishing/learn-to-fish/tips-skills/fishing-for-crappie",
+    "status": 200,
+    "resolved": "https://dec.ny.gov/things-to-do/freshwater-fishing/learn-to-fish/tips-skills/fishing-for-crappie"
+  },
+  {
+    "url": "https://dec.ny.gov/things-to-do/freshwater-fishing/places-to-fish/statewide-opportunities/carp",
+    "status": 200,
+    "resolved": "https://dec.ny.gov/things-to-do/freshwater-fishing/places-to-fish/statewide-opportunities/carp"
+  },
+  {
+    "url": "https://dec.ny.gov/things-to-do/freshwater-fishing/regulations/region-2-special-fishing",
+    "status": 200,
+    "resolved": "https://dec.ny.gov/things-to-do/freshwater-fishing/regulations/region-2-special-fishing"
+  },
+  {
+    "url": "https://dec.ny.gov/things-to-do/saltwater-fishing/recreational-fishing-regulations",
+    "status": 200,
+    "resolved": "https://dec.ny.gov/things-to-do/saltwater-fishing/recreational-fishing-regulations"
+  },
+  {
+    "url": "https://extapps.dec.ny.gov/docs/fish_marine_pdf/tb2kissena.pdf",
+    "status": 200,
+    "resolved": "https://extapps.dec.ny.gov/docs/fish_marine_pdf/tb2kissena.pdf"
+  },
+  {
+    "url": "https://hudsonriverpark.org/locations/pier-34/",
+    "status": 200,
+    "resolved": "https://hudsonriverpark.org/locations/pier-34/"
+  },
+  {
+    "url": "https://maps.apple.com/?q=fishing%20tackle%20shops%20New%20York%20City",
+    "status": 200,
+    "resolved": "https://maps.apple.com/search?query=fishing%20tackle%20shops%20New%20York%20City"
+  },
+  {
+    "url": "https://parks.ny.gov/visit/state-parks/gantry-plaza-state-park",
+    "status": 200,
+    "resolved": "https://parks.ny.gov/visit/state-parks/gantry-plaza-state-park"
+  },
+  {
+    "url": "https://seagrant.sunysb.edu/nysportfishing/fishid.htm",
+    "status": 200,
+    "resolved": "https://seagrant.sunysb.edu/nysportfishing/fishid.htm"
+  },
+  {
+    "url": "https://www.dnr.state.mn.us/fish/sunfish/biology.html",
+    "status": 200,
+    "resolved": "https://www.dnr.state.mn.us/fish/sunfish/biology.html"
+  },
+  {
+    "url": "https://www.fisheries.noaa.gov/species/atlantic-striped-bass",
+    "status": 200,
+    "resolved": "https://www.fisheries.noaa.gov/species/atlantic-striped-bass"
+  },
+  {
+    "url": "https://www.fisheries.noaa.gov/species/black-sea-bass",
+    "status": 200,
+    "resolved": "https://www.fisheries.noaa.gov/species/black-sea-bass"
+  },
+  {
+    "url": "https://www.fisheries.noaa.gov/species/bluefish",
+    "status": 200,
+    "resolved": "https://www.fisheries.noaa.gov/species/bluefish"
+  },
+  {
+    "url": "https://www.fisheries.noaa.gov/species/scup",
+    "status": 200,
+    "resolved": "https://www.fisheries.noaa.gov/species/scup"
+  },
+  {
+    "url": "https://www.fisheries.noaa.gov/species/summer-flounder",
+    "status": 200,
+    "resolved": "https://www.fisheries.noaa.gov/species/summer-flounder"
+  },
+  {
+    "url": "https://www.health.ny.gov/environmental/outdoors/fish/health_advisories/regional/new_york_city.htm",
+    "error": "HTTP Error 403: Forbidden"
+  }
+]

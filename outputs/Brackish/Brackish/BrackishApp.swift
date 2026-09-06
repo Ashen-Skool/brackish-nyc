@@ -38,6 +38,7 @@ struct RootView: View {
                 NavigationStack { SettingsView() }
             } else if store.state.onboarded {
                 NavigationStack {
+                    VStack(spacing: 0) {
                     Group {
                         switch tab {
                         case .atlas: AtlasView()
@@ -46,24 +47,18 @@ struct RootView: View {
                         case .pack: PackView()
                         }
                     }
-                    .toolbar { ToolbarItem(placement: .topBarLeading) { Eyebrow(text: "Brackish").foregroundStyle(Ink.deep).fixedSize().frame(minWidth: 112).accessibilityLabel("Brackish, New York City") }
+                    tabBar
+                    }.background(Ink.paper)
+                    .toolbar {
+                        if #available(iOS 26.0, *) {
+                            ToolbarItem(placement: .topBarLeading) { wordmark }.sharedBackgroundVisibility(.hidden)
+                        } else {
+                            ToolbarItem(placement: .topBarLeading) { wordmark }
+                        }
                         ToolbarItem(placement: .topBarTrailing) { Button { settings = true } label: { Image(systemName: "slider.horizontal.3").frame(width: 44,height: 44) }.accessibilityLabel("Settings and privacy") }
                     }
                     .toolbarBackground(Ink.paper, for: .navigationBar).toolbarBackground(.visible, for: .navigationBar)
-                    .safeAreaInset(edge: .bottom, spacing: 0) {
-                        HStack(spacing: 4) {
-                            ForEach(AppTab.allCases, id: \.self) { item in
-                                Button {
-                                    tactile(); withAnimation(reduceMotion ? nil : .easeInOut(duration: 0.22)) { tab = item }
-                                } label: {
-                                    VStack(spacing: 5) { Image(systemName: item.symbol).font(.system(size: 20)); Text(item.rawValue).font(.caption) }
-                                        .frame(maxWidth: .infinity).padding(.vertical, 12)
-                                        .foregroundStyle(tab == item ? Ink.rust : Ink.deep)
-                                        .background { if tab == item { Capsule().fill(Ink.rust.opacity(0.09)).matchedGeometryEffect(id: "tab", in: selection) } }
-                                }.accessibilityIdentifier("tab-\(item.rawValue.lowercased())").accessibilityAddTraits(tab == item ? .isSelected : [])
-                            }
-                        }.padding(6).background(Ink.paper, in: Capsule()).overlay(Capsule().stroke(Ink.rule, lineWidth: 0.7)).padding(.horizontal, 18).padding(.vertical, 8).background(Ink.paper)
-                    }
+
                 }
             } else { OnboardingView() }
         }
@@ -78,5 +73,22 @@ struct RootView: View {
                     .accessibilityLabel(toast)
             }
         }
+    }
+    private var tabBar: some View {
+                        HStack(spacing: 4) {
+                            ForEach(AppTab.allCases, id: \.self) { item in
+                                Button {
+                                    tactile(); withAnimation(reduceMotion ? nil : .easeInOut(duration: 0.22)) { tab = item }
+                                } label: {
+                                    VStack(spacing: 5) { Image(systemName: item.symbol).font(.system(size: 20)); Text(item.rawValue).font(.caption).lineLimit(1) }
+                                        .frame(maxWidth: .infinity).padding(.vertical, 12)
+                                        .foregroundStyle(tab == item ? Ink.rust : Ink.deep)
+                                        .background { if tab == item { Capsule().fill(Ink.rust.opacity(0.09)).matchedGeometryEffect(id: "tab", in: selection) } }
+                                }.accessibilityElement(children:.ignore).accessibilityLabel(item.rawValue).accessibilityIdentifier("tab-\(item.rawValue.lowercased())").accessibilityAddTraits(.isButton).accessibilityAddTraits(tab == item ? .isSelected : [])
+                            }
+                        }.dynamicTypeSize(...DynamicTypeSize.xxxLarge).padding(6).background(Ink.paper, in: Capsule()).overlay(Capsule().stroke(Ink.rule, lineWidth: 0.7)).padding(.horizontal, 18).padding(.vertical, 8).background(Ink.paper)
+    }
+    private var wordmark: some View {
+        Eyebrow(text: "Brackish").foregroundStyle(Ink.deep).fixedSize().frame(minWidth: 112,alignment:.leading).accessibilityLabel("Brackish, New York City")
     }
 }

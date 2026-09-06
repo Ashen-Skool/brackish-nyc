@@ -5,7 +5,7 @@ enum Ink {
     static let deep = Color(red: 0.035, green: 0.14, blue: 0.15)
     static let teal = Color(red: 0.12, green: 0.29, blue: 0.28)
     static let paper = Color(red: 0.95, green: 0.92, blue: 0.85)
-    static let rust = Color(red: 0.59, green: 0.24, blue: 0.12)
+    static let rust = Color(red: 0.52, green: 0.20, blue: 0.10)
     static let quiet = Color(red: 0.32, green: 0.37, blue: 0.33)
     static let rule = Color(red: 0.035, green: 0.14, blue: 0.15).opacity(0.22)
 }
