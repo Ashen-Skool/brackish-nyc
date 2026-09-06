@@ -1,10 +1,21 @@
 # Brackish — NYC fishing field journal
 
-Native SwiftUI, original underwater art, private on-device photo comparison,
-seven curated NYC shore locations and a personal catch journal.
+Native SwiftUI, original underwater art, a private on-device photo comparison,
+seven curated NYC shore locations and a personal catch journal. Built with GPT-6 Astra.
+No service credentials are required.
 
-The Xcode project, source, design originals, licenses and evidence are in
-[outputs/Brackish](outputs/Brackish). Start with its README for build instructions
-and read the validation/model notes before treating this as a release.
+| Arrival | Identify | Field journal |
+|---|---|---|
+| ![Underwater arrival](outputs/Brackish/Evidence/screenshots/01-underwater-arrival.png) | ![Real photo candidates](outputs/Brackish/Evidence/screenshots/08-species-reveal.png) | ![Field journal example](outputs/Brackish/Evidence/screenshots/09-field-journal.png) |
 
-Created from a single autonomous Codex brief. No service credentials are required.
+These are actual simulator captures. The journal example uses an attributed
+evaluation photograph, not a personal catch. New installations start empty.
+
+Start with [the project README](outputs/Brackish/README.md),
+[validation](outputs/Brackish/Docs/VALIDATION.md), and
+[the model card](outputs/Brackish/Docs/MODEL_CARD.md).
+
+The Xcode project, editable art originals, generation prompts, licenses, tests and
+evidence are in [outputs/Brackish](outputs/Brackish). Photo suggestions are experimental
+and require manual confirmation. Physical-device accuracy/performance are not claimed.
+Live motion acceptance is pending an unlocked Studio; the current recording is provisional.

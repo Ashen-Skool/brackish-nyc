@@ -71,7 +71,8 @@ TestFlight or production performance claim is implied.
 - [MIT app license](LICENSE) and [third-party notices](THIRD_PARTY_NOTICES.md)
 
 Actual simulator captures, test reports, model-evaluation provenance and the
-walkthrough are in `Evidence/`. `Design/visual-target-v1.png` is concept art,
+provisional walkthrough are in `Evidence/`. Live motion acceptance is pending
+an unlocked Mac Studio; see the validation report. `Design/visual-target-v1.png` is concept art,
 **not** an app screenshot. The app ships with an empty journal. Catches shown in
 showcase evidence are clearly labelled examples using attributed evaluation photos.
 

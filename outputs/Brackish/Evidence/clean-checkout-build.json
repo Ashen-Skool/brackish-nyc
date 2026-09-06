@@ -1,5 +1,5 @@
 {
-  "commit": "dc7e7e39b9122dddb19344e7b4fa436543005a22",
+  "commit": "327e4bfaa7cf897b1de9e1ee5bd31183edda26a4",
   "configuration": "Release",
   "destination": "generic/platform=iOS Simulator",
   "xcode": "26.6 (17F113)",

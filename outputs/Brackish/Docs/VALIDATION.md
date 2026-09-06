@@ -12,7 +12,7 @@ when checked, so camera hardware, spoken VoiceOver, felt haptics, device thermal
 and real-device rendering performance are not passed.
 
 A fresh GitHub clone at production-source commit
-`dc7e7e39b` (see the full SHA in Evidence/clean-checkout-build.json) built in Release
+`327e4bfaa` (see the full SHA in Evidence/clean-checkout-build.json) built in Release
 configuration for a generic iOS Simulator with no service keys or model download.
 The generated project is committed. Subsequent delivery commits contain evidence,
 documentation and scripts; production source changes require revalidation.
@@ -99,3 +99,12 @@ contains actual simulator output. The walkthrough uses actual app controls; its
 catch is marked as a showcase example with an attributed iNaturalist photograph,
 not a personal catch. Original artwork, generation prompts, flattened editable PNGs,
 editable Swift layouts/motion, source/content provenance and licenses are delivered.
+
+## Desktop lock at final motion review
+
+The computer-use tool reported that the Mac Studio was locked and automatic unlock
+failed. A live, foreground review is pending an owner unlock. Automated recordings
+contain transition-frame artifacts; their cause has not been confirmed. Passing
+the scripted journey and obtaining a movie file do not establish accepted visual
+motion quality. The recording is marked provisional. Source/build/functionality
+checks are independent of this remaining visual gate.

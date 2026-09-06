@@ -9,7 +9,8 @@
 - [x] Reviewed NYC access/species sources, dates and changing-rule links.
 - [x] Privacy notices, stripped photo GPS, coarse/withheld catch areas, export and deletion.
 - [x] Core, UI, location and metadata checks; known native audit false positive documented.
-- [x] Actual simulator screenshots and recorded walkthrough; measured limitations retained.
+- [x] Actual simulator screenshots and an automated recording; measured limitations retained.
+- [ ] Accept the live foreground motion review and final showcase video after the Studio is unlocked.
 - [x] Clean-clone Release build, MIT license and third-party notices.
 - [x] Code and delivery materials committed and pushed to the GitHub source of truth.
 

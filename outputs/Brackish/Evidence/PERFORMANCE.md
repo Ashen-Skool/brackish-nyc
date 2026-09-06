@@ -40,3 +40,10 @@ for delivery; its nominal video frame rate must not be confused with measured
 application FPS. Haptics are implemented but cannot be felt or verified on a
 simulator. Authored animations consult Reduce Motion; physical spoken VoiceOver
 and motion preference acceptance remain explicitly pending.
+
+A later 45-second walkthrough callback capture (`motion-cadence-walkthrough.json`)
+recorded median/p95 16.67 ms, p99 54.63 ms, maximum 399.87 ms and 72/2,421
+intervals above 25 ms. It is still not a rendered-FPS measurement. At the final
+live review the computer-use tool reported a locked desktop. Recordings show
+transition-frame artifacts, so visual motion acceptance is pending an unlocked
+foreground review; no cause or 60 fps success is inferred.
