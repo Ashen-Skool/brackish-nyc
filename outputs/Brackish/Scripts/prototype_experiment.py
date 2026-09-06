@@ -17,7 +17,7 @@ exclude_hash={r['sha256'] for r in evaluation};exclude_url={r['observation_url']
 species=json.loads((base/'Brackish/Resources/species.json').read_text())
 manifest=[];prototypes=[]
 model=ct.models.MLModel(str(base/'Brackish/Resources/FishEncoder.mlpackage'),compute_units=ct.ComputeUnit.CPU_ONLY)
-def read(url):return urllib.request.urlopen(urllib.request.Request(url,headers={'User-Agent':'Brackish-Recognition-Evaluation/1.0 (github.com/oh-ashen-one/brackish-nyc)'}),timeout=25).read()
+def read(url):return urllib.request.urlopen(urllib.request.Request(url,headers={'User-Agent':'Brackish-Recognition-Evaluation/1.0 (github.com/Ashen-Skool/brackish-nyc)'}),timeout=25).read()
 def encode(path):
  im=ImageOps.fit(ImageOps.exif_transpose(Image.open(path)).convert('RGB'),(224,224),method=Image.Resampling.BICUBIC)
  a=np.asarray(im).astype(np.float32)/255

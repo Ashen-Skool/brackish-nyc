@@ -12,7 +12,7 @@ queries=[(s['id'],s['scientific']) for s in species]
 queries += [('other-fish','Oncorhynchus mykiss'),('other-fish','Carassius auratus'),('other-fish','Prionotus carolinus'),('no-fish','Canis lupus familiaris'),('no-fish','Felis catus'),('no-fish','Helianthus annuus')]
 manifest=[]
 def get(url):
- return urllib.request.urlopen(urllib.request.Request(url,headers={'User-Agent':'Brackish-Showcase-Evaluation/1.0 (github.com/oh-ashen-one/brackish-nyc)'}),timeout=40).read()
+ return urllib.request.urlopen(urllib.request.Request(url,headers={'User-Agent':'Brackish-Showcase-Evaluation/1.0 (github.com/Ashen-Skool/brackish-nyc)'}),timeout=40).read()
 for label,taxon in queries:
  params=urllib.parse.urlencode(dict(taxon_name=taxon,quality_grade='research',photos='true',photo_license='cc0,cc-by,cc-by-sa',per_page=2,order_by='id',order='asc',d1='2023-01-01'))
  try:

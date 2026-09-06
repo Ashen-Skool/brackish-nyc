@@ -49,7 +49,7 @@ struct SettingsView:View {
             }
             Section("The makers’ notebook") {
                 Text("Pip is the quiet observer beside your field notes. Original concept and mascot artwork generated with Codex imagegen. Native SwiftUI engineering by GPT-6 Astra; MIT-licensed app source, separate third-party notices for model weights.").font(.subheadline)
-                SourceLink(title:"Source project",url:"https://github.com/oh-ashen-one/brackish-nyc")
+                SourceLink(title:"Source project",url:"https://github.com/Ashen-Skool/brackish-nyc")
                 Text("Brackish 1.0 · NYC field edition").font(.caption.monospaced())
             }
             Section {Button("Delete all local data",role:.destructive) {erasing=true}.accessibilityIdentifier("delete-all") } footer:{Text("Removes catches, photos, saved places, trip checklists and unfinished photo drafts from this app. Copies you previously exported are separate.")}
